@@ -1,0 +1,61 @@
+import java.util.*;
+
+class Product{
+    int prod_id;
+    String prod_name;
+    String category;
+
+    public Product(int prod_id,String prod_name,String category){
+        this.prod_id=prod_id;
+        this.prod_name=prod_name;
+        this.category=category;
+    }
+    public String toString(){
+        return prod_id+" - "+prod_name+" - "+category;
+    }
+}
+public class EcommerceSearch{
+    public static Product linear(Product[] products,String prod_name)
+    {
+        for(Product p:products){
+            if(p.prod_name.equalsIgnoreCase(prod_name)){
+                return p;
+            }
+        }
+        return null;
+    }
+    public static Product binary(Product[] products,String prod_name){
+        Arrays.sort(products,Comparator.comparing(p->p.prod_name.toLowerCase()));
+        int l=0;
+        int r=products.length-1;
+        while(l<=r){
+            int mid=l+(r-l)/2;
+            int cmp=products[mid].prod_name.compareToIgnoreCase(prod_name);
+            if(cmp==0){
+                return products[mid];
+            }
+            else if(cmp<0){
+                l=mid+1;
+            }
+            else{
+                r=mid-1;
+            }
+        }
+        return null;
+    }
+    public static void main(String[] args) {
+        Product[] products={
+            new Product(1,"mobiles","Electronics"),
+            new Product(2,"shoes","FootWear"),
+            new Product(3,"tshirts","Clothing"),
+            new Product(4,"watches","Essentials")
+        };
+        System.out.println("Please Enter the Product Name:");
+        Scanner sc=new Scanner(System.in);
+        String  name=sc.next();
+        Product result=linear(products,name);
+        Product result2=binary(products,name);
+        System.out.println("Product found: "+result);
+        System.out.println("Product found: "+result2);
+    }
+}
