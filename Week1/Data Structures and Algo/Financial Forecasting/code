@@ -1,0 +1,22 @@
+public class FinancialForecast {
+    public static double forecast(double initial,double rate,int period)
+    {
+        if(period==0) return initial;
+
+        return forecast(initial,rate,period-1)*(1+rate);
+    }
+    public static void main(String[] args)
+    {
+        double initial=20000;
+        double rate=0.05;
+        int period=5;
+        double futurevalue=Tailforecast(initial,rate,period);
+        System.out.printf("The Future value after %d periods is: %.2f%n",period,futurevalue);
+    }
+    //Modified
+    public static double Tailforecast(double current ,double rate,int period){
+        if(period==0) return current;
+
+        return Tailforecast(current*(1+rate),rate,period-1);
+    }
+}
