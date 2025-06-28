@@ -1,0 +1,38 @@
+
+ORA-00955: name is already used by an existing object
+
+https://docs.oracle.com/error-help/db/ora-00955/Error at Line: 4 Column: 0 
+
+
+Discount applied to customer ID: 1
+Discount applied to customer ID: 3
+Discount applied to customer ID: 5
+
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.019
+
+Promoted to VIP: Customer ID 5
+Promoted to VIP: Customer ID 1
+Promoted to VIP: Customer ID 3
+
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.007
+
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.017
+
+
+1 row updated.
+
+Elapsed: 00:00:00.003
+
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.007
