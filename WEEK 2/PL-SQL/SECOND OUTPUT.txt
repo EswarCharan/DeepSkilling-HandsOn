@@ -1,0 +1,90 @@
+
+
+Procedure PROCESSMONTHLYINTEREST compiled
+
+Elapsed: 00:00:00.019
+
+Monthly Interset is applied to all accounts
+
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.005
+
+
+Procedure UPDATEEMPLOYEEBONUS compiled
+
+Elapsed: 00:00:00.004
+
+Salaries updated with bonus in department: Finance
+
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.010
+
+
+
+
+
+
+
+
+    WHERE account_id=p_from_account
+                     *
+ERROR at line 4:
+ORA-06550: line 4, column 22:
+PL/SQL: ORA-00904: "P_FROM_ACCOUNT": invalid identifier
+ORA-06550: line 2, column 5:
+PL/SQL: SQL Statement ignored
+ORA-06550: line 6, column 8:
+PLS-00201: identifier 'V_BALANCE' must be declared
+ORA-06550: line 6, column 5:
+PL/SQL: Statement ignored
+ORA-06550: line 11, column 22:
+PL/SQL: ORA-00904: "P_FROM_ACCOUNT": invalid identifier
+ORA-06550: line 9, column 5:
+PL/SQL: SQL Statement ignored
+ORA-06550: line 15, column 22:
+PL/SQL: ORA-00904: "P_TO_ACCOUNT": invalid identifier
+ORA-06550: line 13, column 5:
+PL/SQL: SQL Statement ignored
+ORA-06550: line 18, column 53:
+PLS-00201: identifier 'P_AMOUNT' must be declared
+ORA-06550: line 18, column 5:
+PL/SQL: Statement ignored
+
+https://docs.oracle.com/error-help/db/ora-06550/
+
+
+More Details :
+https://docs.oracle.com/error-help/db/ora-06550/
+https://docs.oracle.com/error-help/db/pls-00201/
+Elapsed: 00:00:00.012
+
+Transfer successful: 6000 transferred from account 201 to account 202
+
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.004
+
+
+Procedure TRANSFERFUNDS compiled
+
+Elapsed: 00:00:00.002
+
+BEGIN TransferFunds(201,202,6000); END;
+*
+ERROR at line 1:
+ORA-20001: Insufficient balance in source account
+ORA-06512: at "SQL_7BVCJPSF3VNX86DU1DW0R2PYHJ.TRANSFERFUNDS", line 14
+ORA-06512: at line 1
+
+https://docs.oracle.com/error-help/db/ora-20001/
+
+
+More Details :
+https://docs.oracle.com/error-help/db/ora-20001/
+https://docs.oracle.com/error-help/db/ora-06512/
+Elapsed: 00:00:00.010
