@@ -1,0 +1,32 @@
+Here we only create repository interface and the spring handles the rest.
+---Entity--
+// Entity is the same
+@Entity
+@Table(name = "student")
+public class Student {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String name;
+    private String department;
+
+    // Getters and setters
+}
+--java--
+// Repository interface
+@Repository
+public interface StudentRepository extends JpaRepository<Student, Long> {
+    
+}
+--Controller--
+@Autowired
+private StudentRepository studentRepository;
+
+public void saveStudent() {
+    Student student = new Student();
+    student.setName("John");
+    student.setDepartment("CSE");
+
+    studentRepository.save(student);  
+}
